@@ -19,6 +19,18 @@ steps:
     packageType: sdk
     version: '6.x'
 
+# 🔧 Step to upgrade npm
+- script: |
+    echo "Current npm version:"
+    npm -v
+
+    echo "Upgrading npm..."
+    npm install -g npm
+
+    echo "New npm version:"
+    npm -v
+  displayName: 'Upgrade npm to latest'
+
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
